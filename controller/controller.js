@@ -66,7 +66,7 @@ try {
      try {
       const id = req.params.id
         const school = await schoolModel.findById(id)
-        await cloudinary.uploader.destroy(school.imageURL)
+        await cloudinary.uploader.destroy(school.imageID)
         await fs.unlinkSync(school.schoolImage)
         const deleted = await schoolModel.findByIdAndDelete(id) 
         res.status(204).json({success:"successful" ,

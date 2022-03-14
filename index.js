@@ -1,9 +1,10 @@
+require("dotenv").config()
 const express = require("express")
-const port = 3000
+const port = process.env.PORT||3000
 const mongoose = require("mongoose")
 const myRoute = require ("./Router/router")
 const app = express()
-const url = "mongodb+srv://schools:Today@cluster0.xd5wm.mongodb.net/schooldb"
+const url = process.env.ATLASURL
 mongoose.connect(url).then(()=>{
 
     console.log("connected")
