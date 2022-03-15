@@ -4,7 +4,7 @@ const port = process.env.PORT||3000
 const mongoose = require("mongoose")
 const myRoute = require ("./Router/router")
 const app = express()
-const url = process.env.ATLASURL
+const url =process.env.ATLASURL
 mongoose.connect(url).then(()=>{
 
     console.log("connected")
